@@ -1,4 +1,6 @@
 import Input from "./Input";
+import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Form = ({
   name,
@@ -11,6 +13,8 @@ const Form = ({
   setConfirmPassword,
   setStep,
 }) => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   return (
     <form
       onSubmit={(event) => {
@@ -37,21 +41,39 @@ const Form = ({
         placeholder="johnwick@lereacteur.io"
         setState={setEmail}
       />
-      <Input
-        title="Password"
-        type="password"
-        value={password}
-        placeholder="C4o3t2i1nenTal"
-        setState={setPassword}
-      />
-      <Input
-        title="Confirm your Password"
-        type="password"
-        value={confirmPassword}
-        placeholder="C4o3t2i1nenTal"
-        setState={setConfirmPassword}
-      />
-      <button type="submit">Register</button>
+      <div>
+        <Input
+          title="Password"
+          type={showPassword ? "text" : "password"}
+          // type="password"
+          value={password}
+          placeholder="C4o3t2i1nenTal"
+          setState={setPassword}
+        />
+        <FontAwesomeIcon
+          icon="eye"
+          onClick={() => {
+            setShowPassword(!showPassword);
+          }}
+        />
+        <Input
+          title="Confirm your Password"
+          type={showConfirmPassword ? "text" : "password"}
+          // type="password"
+          value={confirmPassword}
+          placeholder="C4o3t2i1nenTal"
+          setState={setConfirmPassword}
+        />
+        <FontAwesomeIcon
+          icon="eye"
+          onClick={() => {
+            setShowConfirmPassword(!showConfirmPassword);
+          }}
+        />
+      </div>
+      <button className="register-button" type="submit">
+        Register
+      </button>
     </form>
   );
 };

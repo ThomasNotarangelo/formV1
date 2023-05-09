@@ -8,11 +8,12 @@ const StepTwo = ({ name, email, password, setStep }) => {
         <p>Password : {password}</p>
       </div>
       <button
+        className="back-button"
         onClick={() => {
           setStep(1);
         }}
       >
-        Edit you informations
+        Edit your informations
       </button>
     </div>
   );

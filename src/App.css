@@ -7,6 +7,7 @@ body {
   align-items: center;
   flex-direction: column;
   height: 100vh;
+  margin-top: -150px;
 }
 
 h1 {
@@ -27,13 +28,22 @@ p {
 }
 
 input {
-  border-width: 1px;
+  height: 40px;
+  width: 250px;
+  border: 1px solid lightgrey;
+  outline: none;
+  background-color: rgb(252, 249, 249);
+
+  /* MA VERSION */
+  /* ///////////////////////// */
+  /* border-width: 1px;
   border-color: #fffafa;
   border-style: inset;
-  background-color: #fffafa;
-  height: 23px;
+  background-color: #fffafa; */
+  /* ///////////////////////// */
   border-radius: 4px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
 }
 
 button {
@@ -69,4 +79,23 @@ h2 {
 
 .stepTwoContainer p {
   margin-bottom: 15px;
+}
+
+.fa-eye {
+  position: relative;
+  z-index: 1;
+  left: -30px;
+  color: #7b7b7b;
+  cursor: pointer;
+}
+
+input .title {
+  font-weight: bold;
+}
+
+.register-button {
+  cursor: pointer;
+}
+.back-button {
+  cursor: pointer;
 }
